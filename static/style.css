@@ -144,7 +144,7 @@ p {
 .main-nav a {
     color: black;
     font-weight: 600;
-    font-size: 1.5vh;
+    font-size: medium;
     position: relative;
     padding-bottom: 5px;
 }
