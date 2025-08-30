@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="{{ current_lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ texts.page_title }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo"><img src="{{ url_for('static', filename='images/logo.png') }}" alt="" style="max-width: 100px;"></div>
+            <nav class="main-nav" >
+                <ul style="color: black;">
+                    <li><a href="#about">{{ texts.nav_about }}</a></li>
+                    <li><a href="#work">{{ texts.nav_work }}</a></li>
+                    <li><a href="#contact">{{ texts.nav_contact }}</a></li>
+                </ul>
+            </nav>
+            <div class="language-selector">
+                <button class="lang-btn" id="lang-toggle">{{ current_lang.upper() }} <i class="fas fa-chevron-down"></i></button>
+                <div class="lang-dropdown" id="lang-dropdown">
+                    <a href="{{ url_for('serve_page', lang_code='en') }}">EN</a>
+                    <a href="{{ url_for('serve_page', lang_code='es') }}">ES</a>
+                    <a href="{{ url_for('serve_page', lang_code='pt') }}">PT</a>
+                </div>
+            </div>
+            <button class="menu-toggle" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <h1>
+                    <span>{{ texts.hero_title_1 }}</span><br>
+                    <span>{{ texts.hero_title_2 }}</span>
+                </h1>
+                <p>{{ texts.hero_description }}</p>
+                <a href="#work" class="main-cta-button">{{ texts.main_cta_button }}</a>
+            </div>
+            <div class="hero-images">
+                <img src="https://placehold.co/640x380" alt="Pessoa trabalhando 1">
+                <img src="https://placehold.co/640x380" alt="Pessoa trabalhando 2">
+                <img src="https://placehold.co/640x380" alt="Pessoa trabalhando 3">
+            </div>
+        </section>
+
+        <section class="recent-projects" id="work">
+            <div class="container">
+                <h2>{{ texts.recent_projects_title }}</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="https://placehold.co/1000x300" alt="Projeto 1">
+                        <h3>{{ texts.project1_title }}</h3>
+                        <p>{{ texts.project1_desc }}</p>
+                        <a href="#" class="view-project">{{ texts.view_project_btn }} <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="project-card">
+                        <img src="https://placehold.co/1000x300" alt="Projeto 2">
+                        <h3>{{ texts.project2_title }}</h3>
+                        <p>{{ texts.project2_desc }}</p>
+                        <a href="#" class="view-project">{{ texts.view_project_btn }} <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="expertise">
+            <div class="container">
+                <div class="expertise-item">
+                    <span class="bullet">1</span>
+                    <h3>{{ texts.expertise1_title }}</h3>
+                    <p>{{ texts.expertise1_desc }}</p>
+                </div>
+                <div class="expertise-item">
+                    <span class="bullet">2</span>
+                    <h3>{{ texts.expertise2_title }}</h3>
+                    <p>{{ texts.expertise2_desc }}</p>
+                </div>
+                <div class="expertise-item">
+                    <span class="bullet">3</span>
+                    <h3>{{ texts.expertise3_title }}</h3>
+                    <p>{{ texts.expertise3_desc }}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-section">
+            <div class="container">
+                <blockquote>
+                    <p>{{ texts.quote_text }}</p>
+                    <footer>
+                        — {{ texts.quote_author }}
+                    </footer>
+                </blockquote>
+            </div>
+        </section>
+
+        <section class="testimonial" id="about">
+            <div class="container testimonial-content">
+                <img src="https://placehold.co/300x300" alt="Foto de Perfil" class="profile-pic">
+                <div class="testimonial-text">
+                    <h2>{{ texts.about_me_title }}</h2>
+                    <p>{{ texts.about_me_p1 }}</p>
+                    <p>{{ texts.about_me_p2 }}</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="knowledge">
+            <div class="container">
+                <h2>{{ texts.knowledge_title }}</h2>
+                <div class="knowledge-grid">
+                    <div class="knowledge-item">
+                        <span class="number">1</span>
+                        <h3>{{ texts.knowledge1_title }}</h3>
+                        <p>{{ texts.knowledge1_desc }}</p>
+                    </div>
+                    <div class="knowledge-item">
+                        <span class="number">2</span>
+                        <h3>{{ texts.knowledge2_title }}</h3>
+                        <p>{{ texts.knowledge2_desc }}</p>
+                    </div>
+                    <div class="knowledge-item">
+                        <span class="number">3</span>
+                        <h3>{{ texts.knowledge3_title }}</h3>
+                        <p>{{ texts.knowledge3_desc }}</p>
+                    </div>
+                    <div class="knowledge-item">
+                        <span class="number">4</span>
+                        <h3>{{ texts.knowledge4_title }}</h3>
+                        <p>{{ texts.knowledge4_desc }}</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2>{{ texts.cta_title | safe }}</h2>
+                <p>{{ texts.cta_subtitle }}</p>
+                <img src="https://placehold.co/400x120" alt="Imagem CTA" class="cta-image">
+                <a href="#contact" class="cta-button">{{ texts.cta_button }}</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <p>&copy; 2023 {{ texts.footer_copyright }}. {{ texts.footer_rights_reserved }}.</p>
+            </div>
+            <div class="footer-col social-links">
+
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <div class="footer-col contact-info">
+                <p>{{ texts.footer_email }}: seu.email@example.com</p>
+                <p>{{ texts.footer_phone }}: (XX) XXXX-XXXX</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
