@@ -92,7 +92,10 @@ p {
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+
 }
+
+
 
 .button-base:hover {
     transform: translateY(-5px);
@@ -285,10 +288,7 @@ p {
     margin-right: auto;
 }
 
-.main-cta-button {
-    @extend .button-base; /* Usa o mixin de estilo base */
-    margin-bottom: 60px;
-}
+
 
 .hero-images {
     display: flex;
