@@ -293,7 +293,7 @@ p {
 .hero-images {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 100px;
     margin-top: 60px;
     padding-bottom: 100px;
     position: relative;
@@ -301,7 +301,7 @@ p {
 }
 
 .hero-images img {
-    width: 30%;
+    width: 20%;
     height: 350px;
     object-fit: cover;
     border-radius: 15px;
