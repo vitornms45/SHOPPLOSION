@@ -8,21 +8,24 @@ app = Flask(__name__)
 SUPPORTED_LANGUAGES = ['pt', 'en', 'es']
 
 def get_text_data(lang_code):
-    """Carrega os dados de texto do arquivo JSON correspondente."""
+    """Carrega os dados de texto do arquivo JSON correspondente (versão corrigida)."""
     if lang_code not in SUPPORTED_LANGUAGES:
-        lang_code = 'pt' # Idioma padrão
+        lang_code = 'pt'  # Idioma padrão
     
-    file_path = os.path.join('translations', f'{lang_code}.json')
+    # --- INÍCIO DA MUDANÇA ---
+    # Encontra o caminho absoluto para o diretório onde o script está
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    
+    # Cria o caminho completo para o arquivo de tradução
+    file_path = os.path.join(script_dir, 'translations', f'{lang_code}.json')
+    # --- FIM DA MUDANÇA ---
     
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
             return json.load(f)
     except FileNotFoundError:
-        # Se o arquivo não for encontrado, retorna um dicionário vazio
-        # ou aborta com um erro 404
-        abort(404, description=f"Language file not found for '{lang_code}'")
-        return {}
-
+        # Se o arquivo não for encontrado, aborta com um erro 404
+        abort(404, description=f"Language file not found for '{lang_code}' at path: {file_path}")
 
 @app.route('/')
 def index():
