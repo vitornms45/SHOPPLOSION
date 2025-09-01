@@ -846,6 +846,10 @@ p {
         grid-template-columns: 1fr;
     }
 
+    .projects-grid img {
+        max-height: 170px;
+    }
+
     .quote-section blockquote {
         font-size: 2em;
         padding: 0 10px;
