@@ -1,16 +1,13 @@
 /* Variáveis de Cores (Inspiradas em Shopplosion) */
 :root {
-    --gradient-pink: #FF006E; /* Rosa vibrante */
-    --gradient-orange: #FFBE0B; /* Laranja vibrante */
-    --gradient-yellow: #FB5607; /* Amarelo/Laranja mais escuro */
-    --bg-dark: #2F092F; /* Roxo escuro para fundo principal */
-    --bg-light: #ae1ab1; /* Roxo ligeiramente mais claro para cards/elementos */
-    --text-light: #f0f0f0; /* Texto claro */
-    --text-accent: #FFBE0B; /* Texto de destaque (amarelo/laranja) */
-    --link-color: #FB5607; /* Cor de link */
+    --bg-dark: #f5f5f5;       /* Fundo geral */
+    --bg-light: #e0e0e0;      /* Cinza médio */
+    --text-dark: #222222;     /* Texto principal */
+    --text-light: #444444;    /* Texto secundário */
+    --link-color: #333333;    /* Links */
 
     /* Gradiente principal */
-    --main-gradient: linear-gradient(45deg, rgba(242, 255, 0, 1) 0%, rgba(244, 4, 204, 1) 100%);
+    --main-gradient: linear-gradient(175deg, rgba(255, 192, 0, 1) 0%, rgba(221, 0, 135, 1) 100%);
     --inverse-gradient: linear-gradient(135deg, var(--gradient-yellow) 0%, var(--gradient-pink) 100%);
 
     /* Fontes */
@@ -324,8 +321,7 @@ p {
 
 /* Recent Projects */
 .recent-projects {
-    background: #f2ff00;
-    background: linear-gradient(0deg, rgba(242, 255, 0, 1) 0%, rgba(244, 4, 204, 1) 100%);
+    background: var(--bg-light);
     padding: 100px 0;
     color: var(--text-light);
     position: relative;
@@ -409,7 +405,7 @@ p {
 
 .project-card .view-project:hover {
     filter: brightness(1.1);
-    background: var(--inverse-gradient);
+    background: var(--main-gradient);
     transform: none; /* Reset do hover do link */
 }
 
@@ -492,7 +488,7 @@ p {
 
 /* Quote Section */
 .quote-section {
-    background: var(--main-gradient); /* Usando o gradiente como fundo */
+    background: var(--bg-light); /* Usando o gradiente como fundo */
     padding: 120px 0;
     text-align: center;
     color: var(--bg-dark); /* Texto escuro no fundo claro */
@@ -541,7 +537,7 @@ p {
 
 /* Testimonial/About Section */
 .testimonial {
-    background-color: var(--bg-dark);
+    background: var(--bg-light);
     padding: 100px 0;
     color: var(--text-light);
     position: relative;
@@ -636,7 +632,7 @@ p {
     display: inline-block;
     width: 70px;
     height: 70px;
-    background: var(--inverse-gradient); /* Gradiente inverso */
+    background: var(--main-gradient); /* Gradiente inverso */
     color: var(--bg-dark);
     border-radius: 50%;
     display: flex;
@@ -676,7 +672,6 @@ p {
     -webkit-text-fill-color: transparent;
     display: inline-block;
     font-weight: 800;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
 
 .cta-section p {

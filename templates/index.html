@@ -33,14 +33,15 @@
         </div>
     </header>
 
-    <main>
+    <main style="display: flex; justify-content: center;">
+        <div class="aling" style="max-width: 85%;">
         <section class="hero-section">
             <div class="container">
                 <h1>
                     <span>{{ texts.hero_title_1 }}</span><br>
                     <span>{{ texts.hero_title_2 }}</span>
                 </h1>
-                <p>{{ texts.hero_description }}</p>
+                <p style="color: black;">{{ texts.hero_description }}</p>
                 <a href="#work" class="main-cta-button">{{ texts.main_cta_button }}</a>
             </div>
             <div class="hero-images">
@@ -90,16 +91,6 @@
             </div>
         </section>
 
-        <section class="quote-section">
-            <div class="container">
-                <blockquote>
-                    <p>{{ texts.quote_text }}</p>
-                    <footer>
-                        — {{ texts.quote_author }}
-                    </footer>
-                </blockquote>
-            </div>
-        </section>
 
         <section class="testimonial" id="about">
             <div class="container testimonial-content">
@@ -148,6 +139,7 @@
                 <a href="#contact" class="cta-button">{{ texts.cta_button }}</a>
             </div>
         </section>
+        </div>
     </main>
 
     <footer class="footer" id="contact">

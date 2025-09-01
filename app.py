@@ -26,7 +26,7 @@ def get_text_data(lang_code):
 
 @app.route('/')
 def index():
-    """Redireciona para o idioma padrão (português)."""    
+    """Redireciona para o idioma padrão (português)."""     
     return redirect(url_for('serve_page', lang_code='pt'))
 
 
